@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "/usr/local/bin/convert -delay 100 Maps/*.png cases.gif"
+
+/usr/local/bin/convert -delay 100 Maps/*.png cases.gif
+
+

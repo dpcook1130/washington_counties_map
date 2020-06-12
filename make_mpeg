@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo "/usr/local/bin/ffmpeg -framerate 5 -pattern_type glob -i '*.png' cases.mp4"
+/usr/local/bin/ffmpeg -framerate 5 -pattern_type glob -i 'Maps/*.png' cases_noloop.mp4
+
+echo "/usr/local/bin/ffmpeg -i cases_noloop.mp4 -c copy cases_noloop.mkv"
+/usr/local/bin/ffmpeg -i cases_noloop.mp4 -c copy cases_noloop.mkv
+
+echo "/usr/local/bin/ffmpeg  -stream_loop 4 -i cases_noloop.mkv -c copy cases.mp4"
+/usr/local/bin/ffmpeg  -stream_loop 4 -i cases_noloop.mkv -c copy cases.mp4
+
